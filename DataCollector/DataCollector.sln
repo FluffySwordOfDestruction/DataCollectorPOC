@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataCollector.TestScadaDBConnection", "TestScadaDBConnection\DataCollector.TestScadaDBConnection.csproj", "{B743D88A-5D64-4352-B507-3F19CCE24ED6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataCollector.DataAccess", "DataCollector.DataAccess\DataCollector.DataAccess.csproj", "{DFBD5276-3749-48F3-AA06-E5A276620FED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PackageManager", "PackageManager\PackageManager.csproj", "{8AEF95AE-22F4-4842-9A0B-20CD3CE18128}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataCollector.Scheduler", "DataCollector.Scheduler\DataCollector.Scheduler.csproj", "{9E59F6C3-3F71-4082-90C8-62629022B41F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataCollector.Api", "DataCollector.Api\DataCollector.Api.csproj", "{72474BB8-E2A6-40AF-BE58-D4165AC53433}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataCollector.Encryptor", "DataCollector.Encryptor\DataCollector.Encryptor.csproj", "{2E7DB45C-9C05-4572-949D-7CC37103104A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B743D88A-5D64-4352-B507-3F19CCE24ED6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B743D88A-5D64-4352-B507-3F19CCE24ED6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B743D88A-5D64-4352-B507-3F19CCE24ED6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B743D88A-5D64-4352-B507-3F19CCE24ED6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFBD5276-3749-48F3-AA06-E5A276620FED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFBD5276-3749-48F3-AA06-E5A276620FED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFBD5276-3749-48F3-AA06-E5A276620FED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFBD5276-3749-48F3-AA06-E5A276620FED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8AEF95AE-22F4-4842-9A0B-20CD3CE18128}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AEF95AE-22F4-4842-9A0B-20CD3CE18128}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AEF95AE-22F4-4842-9A0B-20CD3CE18128}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AEF95AE-22F4-4842-9A0B-20CD3CE18128}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E59F6C3-3F71-4082-90C8-62629022B41F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E59F6C3-3F71-4082-90C8-62629022B41F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E59F6C3-3F71-4082-90C8-62629022B41F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E59F6C3-3F71-4082-90C8-62629022B41F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72474BB8-E2A6-40AF-BE58-D4165AC53433}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72474BB8-E2A6-40AF-BE58-D4165AC53433}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72474BB8-E2A6-40AF-BE58-D4165AC53433}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72474BB8-E2A6-40AF-BE58-D4165AC53433}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E7DB45C-9C05-4572-949D-7CC37103104A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E7DB45C-9C05-4572-949D-7CC37103104A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E7DB45C-9C05-4572-949D-7CC37103104A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E7DB45C-9C05-4572-949D-7CC37103104A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
