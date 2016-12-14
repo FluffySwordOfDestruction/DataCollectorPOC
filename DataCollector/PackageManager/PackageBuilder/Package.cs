@@ -7,7 +7,9 @@ namespace PackageManager.PackageBuilder
 		public PayloadDataType DataType;
 		public int Retention;
 		public DateTime TimeStamp;
-		public EncryptionAlgorithmType EncryptionAlgorithm;
+        public EncryptionAlgorithmType EncryptionAlgorithm;
+        public byte[] EncryptedKey;
+        public byte[] EncryptedIV;
 		public byte[] Payload;
 	}
 }

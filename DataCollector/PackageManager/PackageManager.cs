@@ -14,13 +14,36 @@ namespace PackageManager
 		ISerializationStrategy _serializationStrategy;
 		ICompressionStrategy _compressionStrategy;
 
-		public PackageManager(ISerializationStrategy serializationStrategy, ICompressionStrategy compressionStrategy)
-		{
-			_serializationStrategy = serializationStrategy;
-			_compressionStrategy = compressionStrategy;
-		}
+        public PackageManager(ISerializationStrategy serializationStrategy, ICompressionStrategy compressionStrategy)
+        {
+            _serializationStrategy = serializationStrategy;
+            _compressionStrategy = compressionStrategy;
+        }
 
-		public Package Pack(IEnumerable<DataTable> data)
+        public byte[] SerializeData(IEnumerable<DataTable> data)
+        {
+            DataSerializer serializer = new DataSerializer(_serializationStrategy);
+            DataCompressor compressor = new DataCompressor(_compressionStrategy);
+
+            var turbinesDataJson = serializer.Serialize(data);
+            var turbinesDataBinary = compressor.Compress(turbinesDataJson);
+
+            return turbinesDataBinary;
+        }
+
+        public Package Pack(byte[] data, EncryptionAlgorithmType encryptionAlgType, PayloadDataType dataType, DateTime timeStamp)
+        {
+            return new Package
+            {
+                DataType = dataType,
+                EncryptionAlgorithm = encryptionAlgType,
+                Retention = -1,
+                TimeStamp = timeStamp,
+                Payload = data
+            };
+        }
+
+        public Package Pack(IEnumerable<DataTable> data)
 		{
 			DataSerializer serializer = new DataSerializer(_serializationStrategy);
 			DataCompressor compressor = new DataCompressor(_compressionStrategy);

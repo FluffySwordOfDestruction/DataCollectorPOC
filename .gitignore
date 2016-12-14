@@ -3,3 +3,4 @@
 ################################################################################
 
 /DataCollector/TestScadaDBConnection/App.config
+/DataCollector/DataCollector.Api/app.config

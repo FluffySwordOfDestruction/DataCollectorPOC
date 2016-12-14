@@ -37,7 +37,7 @@ namespace DataCollector.Api.DataManager
 					turbinaDataCollector.CloseConnection();
 					turbinaDataCollector.OpenConnection();
 				}
-				//pobierz dane
+				//Get the data
 				Console.WriteLine("//////////////////////");
 				Stopwatch st = new Stopwatch();
 				st.Start();
@@ -52,11 +52,8 @@ namespace DataCollector.Api.DataManager
 
 				st.Stop();
 
-				StringBuilder sb = new StringBuilder();
-				foreach (var turbineInfo in turbineGroupedByTimeStamp)
-					sb.Append(turbineInfo.TableName + ", ");
-
-				Console.WriteLine("Obtaining Data for " + sb.ToString());
+                var tableNames = GetTableNames(turbineGroupedByTimeStamp);
+				Console.WriteLine("Obtaining Data for " + tableNames);
 				Console.WriteLine("Timestam: " + i.ToString() + ", Time Elapsed: = " + st.ElapsedMilliseconds);
 
 
@@ -72,14 +69,32 @@ namespace DataCollector.Api.DataManager
                 Console.WriteLine("Encrypting data took: " + st.ElapsedMilliseconds);
 
 				counterPackage++;
-				Console.WriteLine("Counter = " + counterPackage);
+                Console.WriteLine("Counter = " + counterPackage);
+
+                var package = DataTransformator.PreaparePackage(securedData.Data, PackageManager.PackageBuilder.EncryptionAlgorithmType.AES, PackageManager.PackageBuilder.PayloadDataType.Data10Minutes, i);
+                package.EncryptedKey = securedData.Key;
+                package.EncryptedIV = securedData.Vector;
+                var binaryPackage = DataTransformator.GetBinary(package);
+
                 // send to data relay
+
+                DataRelayService.DataRelayServiceClient client = new DataRelayService.DataRelayServiceClient();
+                var result = client.Send(binaryPackage);
+
                 turbinaDataCollector.SetTimeStampsForTables(turbineGroupedByTimeStamp);
 
             }
 		}
 
-		internal static IGrouping<DateTime, TurbineInfo> ChangeCurrentTimeStamp(IGrouping<DateTime, TurbineInfo> turbineGroupedByTimeStamp, DateTime i)
+        private static object GetTableNames(IGrouping<DateTime, TurbineInfo> turbineGroupedByTimeStamp)
+        {
+            StringBuilder sb = new StringBuilder();
+            foreach (var turbineInfo in turbineGroupedByTimeStamp)
+                sb.Append(turbineInfo.TableName + ", ");
+            return sb.ToString();
+        }
+
+        internal static IGrouping<DateTime, TurbineInfo> ChangeCurrentTimeStamp(IGrouping<DateTime, TurbineInfo> turbineGroupedByTimeStamp, DateTime i)
 		{
 			foreach (var turbineInfo in turbineGroupedByTimeStamp)
 				turbineInfo.TimeStamp = i;
