@@ -1,4 +1,5 @@
 ﻿using DAL;
+using DataCollector.Encryptor;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -58,13 +59,21 @@ namespace DataCollector.Api.DataManager
 				Console.WriteLine("Obtaining Data for " + sb.ToString());
 				Console.WriteLine("Timestam: " + i.ToString() + ", Time Elapsed: = " + st.ElapsedMilliseconds);
 
-				//wyslij do serializatora
+
+				//send to serializator
 				var serializedData = DataTransformator.SerializeData(turbineData);
+               
+
+                IEncryptor encryptor = new AESEncryptor();
+                st.Reset();
+                st.Start();
+                var securedData = encryptor.EncryptData(serializedData);
+                st.Stop();
+                Console.WriteLine("Encrypting data took: " + st.ElapsedMilliseconds);
 
 				counterPackage++;
 				Console.WriteLine("Counter = " + counterPackage);
-                // wyslij do data realey
-                //  var deserialize = serializer.Deserialize(serializedData);
+                // send to data relay
                 turbinaDataCollector.SetTimeStampsForTables(turbineGroupedByTimeStamp);
 
             }

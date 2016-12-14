@@ -8,6 +8,6 @@ namespace DataCollector.Encryptor
 {
     public interface IEncryptor
     {
-        EncryptedData EncryptData(string data);
+        EncryptedData EncryptData(byte[] data);
     }
 }
