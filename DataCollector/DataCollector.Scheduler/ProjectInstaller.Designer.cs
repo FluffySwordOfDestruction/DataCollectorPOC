@@ -33,7 +33,7 @@
 			// 
 			// serviceProcessInstaller1
 			// 
-			this.serviceProcessInstaller1.Account = System.ServiceProcess.ServiceAccount.LocalService;
+			this.serviceProcessInstaller1.Account = System.ServiceProcess.ServiceAccount.LocalSystem;
 			this.serviceProcessInstaller1.Password = null;
 			this.serviceProcessInstaller1.Username = null;
 			// 
@@ -42,7 +42,8 @@
 			this.serviceInstaller1.Description = "A windows service for collecting Wind Turbine data in order to transport them to " +
     "Data Relay";
 			this.serviceInstaller1.DisplayName = "DataCollector.Scheduler";
-			this.serviceInstaller1.ServiceName = "Scheduler";
+			this.serviceInstaller1.ServiceName = "DataCollectorScheduler";
+			this.serviceInstaller1.AfterInstall += new System.Configuration.Install.InstallEventHandler(this.serviceInstaller1_AfterInstall);
 			// 
 			// ProjectInstaller
 			// 
