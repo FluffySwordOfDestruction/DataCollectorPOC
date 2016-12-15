@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<routingInfo>
+	<endpoints>
+		<endpoint address="http://localhost/DataWriterWcfService/DataWriterService.svc">
+			<dataTypes>
+				<dataType>Data10Minutes</dataType>
+				<dataType>HeartBeat</dataType>
+				<dataType>Exception</dataType>
+			</dataTypes>
+		</endpoint>
+		<endpoint address="http://n46287/DataRelay.WcfHost/DataRelayService.svc">
+			<dataTypes>
+				<dataType>Data1Second</dataType>
+			</dataTypes>
+		</endpoint>
+	</endpoints>
+</routingInfo>

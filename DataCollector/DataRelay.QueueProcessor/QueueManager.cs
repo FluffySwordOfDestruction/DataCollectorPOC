@@ -1,4 +1,5 @@
-﻿using PackageManager.Compression.CompressionStrategies;
+﻿using DataRelay.QueueProcessor.DataRouting;
+using PackageManager.Compression.CompressionStrategies;
 using PackageManager.PackageBuilder;
 using PackageManager.Serialization.SerializationStrategies;
 using System;
@@ -41,7 +42,6 @@ namespace DataRelay.QueueProcessor
 				timer.AutoReset = true;
 				timer.Elapsed += (obj, args) =>
 				{
-					PackageManager.PackageManager pm = new PackageManager.PackageManager(new JsonNet(), new GZipStreamCompression());
 					Package package = null;
 
 					lock (syncLock)
@@ -52,8 +52,11 @@ namespace DataRelay.QueueProcessor
 
 					if (package != null)
 					{
-						byte[] packageBinary = pm.ToBinaryFormat(package);
-						packageBinaryList.Add(packageBinary);
+						//PackageManager.PackageManager pm = new PackageManager.PackageManager(new JsonNet(), new GZipStreamCompression());
+						//byte[] packageBinary = pm.ToBinaryFormat(package);
+						//packageBinaryList.Add(packageBinary);
+
+						DataRouter.Route(package);
 					}
 
 					tcs.TrySetResult(true);
