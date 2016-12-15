@@ -10,7 +10,7 @@ namespace DataCollector.Api
 
 		public static void ProcessTurbineData()
 		{
-			DateTime endDate = new DateTime(2013, 10, 10);
+            DateTime endDate = new DateTime(2013, 10, 08, 12, 00, 00);
 
 			var turbinaDataCollector = new VestasTurbinesData();
 			var turbineList = turbinaDataCollector.GetTurbineList();

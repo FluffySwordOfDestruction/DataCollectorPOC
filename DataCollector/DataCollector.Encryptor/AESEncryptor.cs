@@ -62,7 +62,7 @@ namespace DataCollector.Encryptor
                     {
 
                         //Write all data to the stream.
-                        csEncrypt.Write(plainText,0,plainText.Length);
+                        csEncrypt.Write(plainText, 0, plainText.Length);
                     }
                     encrypted = msEncrypt.ToArray();
                 }
@@ -71,6 +71,11 @@ namespace DataCollector.Encryptor
             // Return the encrypted bytes from the memory stream.
             return encrypted;
 
+        }
+
+        public byte[] DecryptData(byte[] encryptedData, byte[] key, byte[] IV)
+        {
+            return Decrypt(encryptedData, key, IV);
         }
 
         byte[] Decrypt(byte[] cipherText, byte[] Key, byte[] IV)

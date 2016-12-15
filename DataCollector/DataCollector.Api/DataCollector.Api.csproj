@@ -70,19 +70,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="Service References\DataRelayService\DataRelayService.wsdl" />
-    <None Include="Service References\DataRelayService\DataRelayService.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\DataRelayService\DataRelayService1.xsd">
-      <SubType>Designer</SubType>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\DataRelayService\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\DataRelayService\DataRelayService.disco" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\DataRelayService\configuration91.svcinfo" />
@@ -91,10 +81,20 @@
     <None Include="Service References\DataRelayService\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Service References\DataRelayService\DataRelayService1.wsdl" />
+    <None Include="Service References\DataRelayService\DataRelayService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DataRelayService\DataRelayService21.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\DataRelayService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DataRelayService\DataRelayService1.disco" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

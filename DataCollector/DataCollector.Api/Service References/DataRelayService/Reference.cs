@@ -16,7 +16,10 @@ namespace DataCollector.Api.DataRelayService {
     public interface IDataRelayService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDataRelayService/Send", ReplyAction="http://tempuri.org/IDataRelayService/SendResponse")]
-        string Send(byte[] package);
+        bool Send(byte[] package);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDataRelayService/KnockKnock", ReplyAction="http://tempuri.org/IDataRelayService/KnockKnockResponse")]
+        bool KnockKnock(byte[] package);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -46,8 +49,12 @@ namespace DataCollector.Api.DataRelayService {
                 base(binding, remoteAddress) {
         }
         
-        public string Send(byte[] package) {
+        public bool Send(byte[] package) {
             return base.Channel.Send(package);
+        }
+        
+        public bool KnockKnock(byte[] package) {
+            return base.Channel.KnockKnock(package);
         }
     }
 }

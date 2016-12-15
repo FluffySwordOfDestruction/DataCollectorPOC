@@ -18,13 +18,13 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://10.5.134.18/DataRelay.WcfHost/DataRelayService.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://10.5.133.1/DataRelay.WcfHost/DataRelayService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="DataRelayService.disco" MetadataType="Disco" ID="cc6656e1-f50c-49b0-a3d6-b2e4a3cf2f14" SourceId="1" SourceUrl="http://10.5.134.18/DataRelay.WcfHost/DataRelayService.svc?disco" />
-    <MetadataFile FileName="DataRelayService.xsd" MetadataType="Schema" ID="8406fb25-19dc-4c78-9c4b-71876efa35d8" SourceId="1" SourceUrl="http://10.5.134.18/DataRelay.WcfHost/DataRelayService.svc?xsd=xsd1" />
-    <MetadataFile FileName="DataRelayService1.xsd" MetadataType="Schema" ID="26e069db-2706-4d11-aea0-12476662b9c5" SourceId="1" SourceUrl="http://10.5.134.18/DataRelay.WcfHost/DataRelayService.svc?xsd=xsd0" />
-    <MetadataFile FileName="DataRelayService.wsdl" MetadataType="Wsdl" ID="e595f903-0e08-4fd1-9039-7fa39f0dadba" SourceId="1" SourceUrl="http://10.5.134.18/DataRelay.WcfHost/DataRelayService.svc?wsdl" />
+    <MetadataFile FileName="DataRelayService1.disco" MetadataType="Disco" ID="4cf2fb83-5ef7-42ba-b362-612f9c92317d" SourceId="1" SourceUrl="http://10.5.133.1/DataRelay.WcfHost/DataRelayService.svc?disco" />
+    <MetadataFile FileName="DataRelayService1.wsdl" MetadataType="Wsdl" ID="36b2edfc-6c60-4795-a581-332ed66ac1c2" SourceId="1" SourceUrl="http://10.5.133.1/DataRelay.WcfHost/DataRelayService.svc?wsdl" />
+    <MetadataFile FileName="DataRelayService2.xsd" MetadataType="Schema" ID="f51ec08a-6f38-4131-9f96-636a3046deb3" SourceId="1" SourceUrl="http://10.5.133.1/DataRelay.WcfHost/DataRelayService.svc?xsd=xsd1" />
+    <MetadataFile FileName="DataRelayService21.xsd" MetadataType="Schema" ID="366d99e0-48a0-4c96-9fc4-45e19f1c48a8" SourceId="1" SourceUrl="http://10.5.133.1/DataRelay.WcfHost/DataRelayService.svc?xsd=xsd0" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
