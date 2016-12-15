@@ -17,17 +17,19 @@ namespace DataCollector.Api.DataManager
             Stopwatch st = new Stopwatch();
             st.Start();
 
-            // Step 1: serialize & compress
-            var result = _pm.SerializeData(turbineData);
+            // Step 1: serialize
+            var jsonResult = _pm.SerializeData(turbineData);
 
+			// Step 2: compress
+			var binaryResult = _pm.Compress(jsonResult);
 
-            //// Step 2: to binary format
-            //byte[] packageBinary = pm.ToBinaryFormat(package);
+			//// Step 3: to binary format
+			//byte[] packageBinary = pm.ToBinaryFormat(package);
 
-            st.Stop();
+			st.Stop();
             Console.WriteLine("Serializing, Compress = " + st.ElapsedMilliseconds);
 
-            return result;
+            return binaryResult;
         }
 
 

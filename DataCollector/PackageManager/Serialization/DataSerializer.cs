@@ -18,7 +18,7 @@ namespace PackageManager.Serialization
 			return _serializationStrategy.Deserialize(data);
 		}
 
-		public string Serialize(IEnumerable<DataTable> data)
+		public string Serialize(object data)
 		{
 			return _serializationStrategy.Serialize(data);
 		}

@@ -5,7 +5,7 @@ namespace PackageManager.Serialization.SerializationStrategies
 {
 	public interface ISerializationStrategy
 	{
-		string Serialize(IEnumerable<DataTable> data);
+		string Serialize(object data);
 		string Deserialize(string json);
 	}
 }

@@ -20,18 +20,22 @@ namespace PackageManager
             _compressionStrategy = compressionStrategy;
         }
 
-        public byte[] SerializeData(IEnumerable<DataTable> data)
+        public string SerializeData(IEnumerable<DataTable> data)
         {
-            DataSerializer serializer = new DataSerializer(_serializationStrategy);
-            DataCompressor compressor = new DataCompressor(_compressionStrategy);
-
-            var turbinesDataJson = serializer.Serialize(data);
-            var turbinesDataBinary = compressor.Compress(turbinesDataJson);
-
-            return turbinesDataBinary;
+			return new DataSerializer(_serializationStrategy).Serialize(data);
         }
 
-        public Package Pack(byte[] data, EncryptionAlgorithmType encryptionAlgType, PayloadDataType dataType, DateTime timeStamp)
+		public string SerializeData(Package data)
+		{
+			return new DataSerializer(_serializationStrategy).Serialize(data);
+		}
+
+		public byte[] Compress(string jsonPayloadData)
+		{
+			return new DataCompressor(_compressionStrategy).Compress(jsonPayloadData);
+		}
+
+		public Package Pack(byte[] data, EncryptionAlgorithmType encryptionAlgType, PayloadDataType dataType, DateTime timeStamp)
         {
             return new Package
             {

@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="DataRelay.WcfHost.DataRelayService" CodeBehind="DataRelayService.svc.cs" %>

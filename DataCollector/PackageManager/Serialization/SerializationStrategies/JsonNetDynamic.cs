@@ -27,7 +27,7 @@ namespace PackageManager.Serialization.SerializationStrategies
 			return g.ToString();
 		}
 
-		public string Serialize(IEnumerable<DataTable> data)
+		public string Serialize(object data)
 		{
 			Stopwatch sw = new Stopwatch();
 			sw.Start();
@@ -35,7 +35,7 @@ namespace PackageManager.Serialization.SerializationStrategies
 			StringBuilder jsonString = new StringBuilder();
 
 			
-				var obj = BindDynamics(data);
+				var obj = BindDynamics((IEnumerable<DataTable> )data);
 				string jsonPart = JsonConvert.SerializeObject(obj, Formatting.Indented);
 
 				jsonString.Append(jsonPart);

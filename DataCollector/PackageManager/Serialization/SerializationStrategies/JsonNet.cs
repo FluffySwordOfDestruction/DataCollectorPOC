@@ -24,21 +24,12 @@ namespace PackageManager.Serialization.SerializationStrategies
 			return g.ToString();
 		}
 
-		public string Serialize(IEnumerable<DataTable> data)
+		public string Serialize(object data)
 		{
-			Stopwatch sw = new Stopwatch();
-			sw.Start();
-
 			StringBuilder jsonString = new StringBuilder();
 
-			//foreach (var turbine in data)
-			//{
-				string jsonPart = Newtonsoft.Json.JsonConvert.SerializeObject(data);
-				jsonString.Append(jsonPart);
-			//}
-
-			sw.Stop();
-			long time = sw.ElapsedMilliseconds;
+			string jsonPart = Newtonsoft.Json.JsonConvert.SerializeObject(data);
+			jsonString.Append(jsonPart);
 
 			return jsonString.ToString();
 		}
