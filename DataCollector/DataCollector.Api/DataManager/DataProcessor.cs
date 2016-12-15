@@ -93,7 +93,7 @@ namespace DataCollector.Api.DataManager
 
                     // client.KnockKnock(binaryPackage);
                 }
-                catch (EndpointNotFoundException ex)
+                catch (EndpointNotFoundException)
                 {
                     Console.WriteLine("Couldn't connect to Data Relay using configured endpoint");
                     continue;

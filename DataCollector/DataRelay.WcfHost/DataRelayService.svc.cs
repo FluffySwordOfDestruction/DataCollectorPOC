@@ -7,14 +7,15 @@ using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
 
+
 namespace DataRelay.WcfHost
 {
 	public class DataRelayService : IDataRelayService
 	{
 		public bool Send(byte[] package)
 		{
-			return DataProcessor.RecieveData(package);
-		}
+            return DataProcessor.RecieveData(package);
+        }
 
 		public bool KnockKnock(byte[] package)
 		{

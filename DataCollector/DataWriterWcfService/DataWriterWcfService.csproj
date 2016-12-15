@@ -7,15 +7,16 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{90A87834-9C6E-47CD-A52C-1E10768DE232}</ProjectGuid>
+    <ProjectGuid>{8D2CC1D7-AE6B-49C9-B238-4D1D6102D7F8}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DataRelay.WcfHost</RootNamespace>
-    <AssemblyName>DataRelay.WcfHost</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <RootNamespace>DataWriterWcfService</RootNamespace>
+    <AssemblyName>DataWriterWcfService</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
-    <UseIISExpress>true</UseIISExpress>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <UseIISExpress>false</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -60,40 +61,21 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DataRelayService.svc" />
-    <None Include="Service References\NextDataRelayService\DataWriterService.disco" />
-    <None Include="Service References\NextDataRelayService\configuration91.svcinfo" />
-    <None Include="Service References\NextDataRelayService\configuration.svcinfo" />
-    <None Include="Service References\NextDataRelayService\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
+    <Content Include="DataWriterService.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataRelayService.svc.cs">
-      <DependentUpon>DataRelayService.svc</DependentUpon>
+    <Compile Include="DataWriterService.svc.cs">
+      <DependentUpon>DataWriterService.svc</DependentUpon>
     </Compile>
     <Compile Include="IDataRelay.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service References\NextDataRelayService\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="RecievedPackages\" />
+    <Folder Include="ReceivedPackages\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\NextDataRelayService\DataWriterService.wsdl" />
-    <None Include="Service References\NextDataRelayService\DataWriterService.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\NextDataRelayService\DataWriterService1.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -102,16 +84,14 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DataRelay.QueueProcessor\DataRelay.QueueProcessor.csproj">
-      <Project>{a0d50cc9-586e-4f7e-bb37-f5c906033091}</Project>
-      <Name>DataRelay.QueueProcessor</Name>
+    <ProjectReference Include="..\DataCollector.Encryptor\DataCollector.Encryptor.csproj">
+      <Project>{2e7db45c-9c05-4572-949d-7cc37103104a}</Project>
+      <Name>DataCollector.Encryptor</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadataStorage Include="Service References\NextDataRelayService\" />
+    <ProjectReference Include="..\DataWriter\DataWriter.csproj">
+      <Project>{48bac8e1-1268-4050-8b5a-2bd88fa0607d}</Project>
+      <Name>DataWriter</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -126,9 +106,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>64489</DevelopmentServerPort>
+          <DevelopmentServerPort>52281</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:64489/</IISUrl>
+          <IISUrl>http://localhost/DataWriterWcfService</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

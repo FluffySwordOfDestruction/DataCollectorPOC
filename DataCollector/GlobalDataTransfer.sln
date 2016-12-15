@@ -16,6 +16,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataCollector.Encryptor", "DataCollector.Encryptor\DataCollector.Encryptor.csproj", "{2E7DB45C-9C05-4572-949D-7CC37103104A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataRelay.WcfHost", "DataRelay.WcfHost\DataRelay.WcfHost.csproj", "{90A87834-9C6E-47CD-A52C-1E10768DE232}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8D2CC1D7-AE6B-49C9-B238-4D1D6102D7F8} = {8D2CC1D7-AE6B-49C9-B238-4D1D6102D7F8}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataRelay.QueueProcessor", "DataRelay.QueueProcessor\DataRelay.QueueProcessor.csproj", "{A0D50CC9-586E-4F7E-BB37-F5C906033091}"
 EndProject
@@ -27,6 +30,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataRelay.WcfHostTester", "
 	ProjectSection(ProjectDependencies) = postProject
 		{90A87834-9C6E-47CD-A52C-1E10768DE232} = {90A87834-9C6E-47CD-A52C-1E10768DE232}
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataWriter", "DataWriter", "{7C1324F3-7A6C-42B9-A717-D9D130CDBECA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataWriterWcfService", "DataWriterWcfService\DataWriterWcfService.csproj", "{8D2CC1D7-AE6B-49C9-B238-4D1D6102D7F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataWriter", "DataWriter\DataWriter.csproj", "{48BAC8E1-1268-4050-8B5A-2BD88FA0607D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -70,6 +79,14 @@ Global
 		{2F1B9283-268C-45FC-A970-B55B4D3CA1BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F1B9283-268C-45FC-A970-B55B4D3CA1BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F1B9283-268C-45FC-A970-B55B4D3CA1BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D2CC1D7-AE6B-49C9-B238-4D1D6102D7F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D2CC1D7-AE6B-49C9-B238-4D1D6102D7F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D2CC1D7-AE6B-49C9-B238-4D1D6102D7F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D2CC1D7-AE6B-49C9-B238-4D1D6102D7F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48BAC8E1-1268-4050-8B5A-2BD88FA0607D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48BAC8E1-1268-4050-8B5A-2BD88FA0607D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48BAC8E1-1268-4050-8B5A-2BD88FA0607D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48BAC8E1-1268-4050-8B5A-2BD88FA0607D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -83,5 +100,7 @@ Global
 		{90A87834-9C6E-47CD-A52C-1E10768DE232} = {C44339DD-13FF-4879-A9B8-0E466FCDFF3D}
 		{A0D50CC9-586E-4F7E-BB37-F5C906033091} = {C44339DD-13FF-4879-A9B8-0E466FCDFF3D}
 		{2F1B9283-268C-45FC-A970-B55B4D3CA1BD} = {C44339DD-13FF-4879-A9B8-0E466FCDFF3D}
+		{8D2CC1D7-AE6B-49C9-B238-4D1D6102D7F8} = {7C1324F3-7A6C-42B9-A717-D9D130CDBECA}
+		{48BAC8E1-1268-4050-8B5A-2BD88FA0607D} = {7C1324F3-7A6C-42B9-A717-D9D130CDBECA}
 	EndGlobalSection
 EndGlobal
