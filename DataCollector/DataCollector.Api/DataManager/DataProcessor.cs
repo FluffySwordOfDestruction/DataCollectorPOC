@@ -1,5 +1,5 @@
 ﻿using DAL;
-using DataCollector.Encryptor;
+using Encryptor;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;

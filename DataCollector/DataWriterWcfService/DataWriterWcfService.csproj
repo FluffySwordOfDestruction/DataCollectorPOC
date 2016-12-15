@@ -84,9 +84,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DataCollector.Encryptor\DataCollector.Encryptor.csproj">
+    <ProjectReference Include="..\DataCollector.Encryptor\Encryptor.csproj">
       <Project>{2e7db45c-9c05-4572-949d-7cc37103104a}</Project>
-      <Name>DataCollector.Encryptor</Name>
+      <Name>Encryptor</Name>
     </ProjectReference>
     <ProjectReference Include="..\DataWriter\DataWriter.csproj">
       <Project>{48bac8e1-1268-4050-8b5a-2bd88fa0607d}</Project>

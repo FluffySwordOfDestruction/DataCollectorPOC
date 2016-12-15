@@ -45,9 +45,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DataCollector.Encryptor\DataCollector.Encryptor.csproj">
+    <ProjectReference Include="..\DataCollector.Encryptor\Encryptor.csproj">
       <Project>{2e7db45c-9c05-4572-949d-7cc37103104a}</Project>
-      <Name>DataCollector.Encryptor</Name>
+      <Name>Encryptor</Name>
     </ProjectReference>
     <ProjectReference Include="..\PackageManager\PackageManager.csproj">
       <Project>{8aef95ae-22f4-4842-9a0b-20cd3ce18128}</Project>

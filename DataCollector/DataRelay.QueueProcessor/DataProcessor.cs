@@ -1,4 +1,4 @@
-﻿using DataCollector.Encryptor;
+﻿using Encryptor;
 using PackageManager.Compression.CompressionStrategies;
 using PackageManager.PackageBuilder;
 using PackageManager.Serialization.SerializationStrategies;

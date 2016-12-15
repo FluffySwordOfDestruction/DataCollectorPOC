@@ -2,11 +2,7 @@
 using PackageManager.PackageBuilder;
 using PackageManager.Serialization.SerializationStrategies;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DataCollector.Encryptor;
+using Encryptor;
 using System.IO;
 
 namespace DataWriter

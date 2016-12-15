@@ -6,7 +6,7 @@ using System.Security.Cryptography;
 using System.IO;
 using System.Diagnostics;
 
-namespace DataCollector.Encryptor
+namespace Encryptor
 {
     public class AESEncryptor : IEncryptor
     {
